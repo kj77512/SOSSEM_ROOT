@@ -22,7 +22,7 @@ body{
     text-align: center;
     position: relative;
     overflow: hidden;
-    color: #888;
+    color: #222;
 }
 .sns a::before{
     content:"";
@@ -37,6 +37,9 @@ body{
 }
 .sns > a > i{
     position: relative;
+}
+.sns > a:hover i{
+    color: #fff;
 }
 .sns > a:hover::before{
     width: 100%;

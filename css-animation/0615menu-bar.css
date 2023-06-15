@@ -89,10 +89,53 @@ a{
 .menu5:after{
     content: ">>>>>";
 } */
+.menu5{
+    position: relative;
+}
 .menu5:after{
     content:"";
     display: block;
-    width: 100%;
+    width: 0;
     height: 2px;
     background-color: tomato;
+    transition: 1s;
+    position: absolute;
+    right: 0;
+}
+.menu5:hover:after{
+    width: 100%;
+}
+
+/*** menu6 ***/
+.menu6{
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+.menu6::before{
+    content: "MENU-6";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: tomato;
+    transition: 1s;
+    position: absolute;
+    top: 0;
+}
+.menu6:hover::before{
+    top: -100%;
+}
+.menu6:hover::after{
+    top: 0;
+}
+.menu6::after{
+    content: "MENU-6";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    transition: 1s;
+    position: absolute;
+    top: 100%;
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본CSS를 phone으로</title>
+    <style>
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 > span{
+            color: orange;
+        }
+        .menu-bar{
+            width: 30px;
+            height: 30px;
+            position: relative;
+        }
+        .menu-bar > div{
+            width: 100%;
+            height: 2px;
+            background-color: #222;
+            position: absolute;
+        }
+        .menu-bar > div:nth-of-type(1){
+            top: 0;
+        }
+        .menu-bar > div:nth-of-type(2){
+            top: 50%;
+        }
+        .menu-bar > div:nth-of-type(3){
+            top: 100%;
+        }
+        .menu-text{
+            display: none;
+            /* opacity: 0; */
+        }
+        .menu-text > p{
+            display: inline-block;
+            margin: 10px;
+        }
+        @media screen and (min-width:768px){
+            .menu-text{
+                display: block;
+            }
+            .menu-bar{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span>L</span>orem <span>i</span>psum</h1>
+        <div class="menu-bar">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-text">
+            <p>MENU-1</p>
+            <p>MENU-2</p>
+            <p>MENU-3</p>
+            <p>MENU-4</p>
+        </div>
+    </header>
+</body>
+</html>

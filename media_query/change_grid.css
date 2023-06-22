@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/*** reset.css ***/
+*{ margin: 0; padding: 0;}
+
+h1{
+    text-align: center;
+}
+section > div{
+    width: 80%;
+    margin: 10px auto;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #222;
+    position: relative;
+}
+section > div > p{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 3px 3px 3px #000;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+/*** bg img ***/
+section > div:nth-of-type(1){
+    background-image: url(../image/numnber/image-01.png);
+}
+section > div:nth-of-type(2){
+    background-image: url(../image/numnber/image-02.png);
+}
+section > div:nth-of-type(3){
+    background-image: url(../image/numnber/image-03.png);
+}
+section > div:nth-of-type(4){
+    background-image: url(../image/numnber/image-04.png);
+}
+section > div:nth-of-type(5){
+    background-image: url(../image/numnber/image-05.png);
+}
+footer{
+    font-size: 1.5rem;
+    background-color: #222;
+    color: #fff;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}

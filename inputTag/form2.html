@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM EXAM</title>
+</head>
+<body>
+    <h1>회원 가입을 환영합니다.</h1>
+    <form action="" method="get">
+        <fieldset>
+            <legend>사용자 정보</legend>
+            <ul>
+                <li>
+                    <label for="login_id">아이디</label>
+                    <input type="text" name="login_id" id="login_id">
+                </li>
+                <li>
+                    <label for="login_email">이메일</label>
+                    <input type="email" name="login_email" id="login_email">
+                </li>
+                <li>
+                    <label for="login_pw">비밀번호</label>
+                    <input type="password" name="login_pw" id="login_pw">
+                </li>
+                <li>
+                    <label for="login_ok">비밀번호 확인</label>
+                    <input type="password" name="login_ok" id="login_ok">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>이벤트완 새로운 소식</legend>
+            <input type="radio" name="event" id="event_on">
+            <label for="event_on">메일 수신</label>
+            <input type="radio" name="event" id="event_off">
+            <label for="event_off">메일 수신 안함</label>
+        </fieldset>
+        <div class="btn">
+            <button type="submit">가입하기</button>
+            <button type="reset">취소</button>
+        </div>
+    </form>
+</body>
+</html>

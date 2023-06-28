@@ -40,16 +40,17 @@
             <fieldset>
                 <legend>로그인</legend>
                 <label for="login-id">로그인 아이디 :</label>
-                <input type="text" name="login-id" id="login_id" placeholder="아이디를 입력하세요" maxlength="5">
+                <input type="text" name="login-id" id="login_id" placeholder="아이디를 입력하세요" maxlength="5" readonly>
                 <input type="button" value="입력" onclick="alert('확인');">
                 <br>
                 <label for="login_pw">비밀번호 : </label>
-                <input type="password" name="login_pw" id="login_pw">
+                <input type="password" name="login_pw" id="login_pw" required>
                 <input type="button" value="입력">
             </fieldset>
             <div>
                 <label for="input_etc">기타 타입</label>
-                <input type="week" name="etc" id="input_etc">                
+                <input type="week" name="etc" id="input_etc">
+                <button type="submit">확인</button>
             </div>
         </form>
     </body>

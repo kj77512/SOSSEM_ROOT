@@ -6,6 +6,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+input{
+    display: none;
+}
 .slide{
     width: 300px;
     height: 300px;
@@ -18,6 +21,11 @@ body{
     top: 0;
     left: 0;
     opacity: 0;
+    transition: 0.5s;
+}
+.btn{
+    text-align: center;
+    padding: 10px;
 }
 .btn > label{
     display: inline-block;
@@ -31,4 +39,10 @@ input[id=tab2]:checked ~ .slide > img:nth-child(2),
 input[id=tab3]:checked ~ .slide > img:nth-child(3)
 {
     opacity: 1;
+}
+input[id=tab1]:checked ~ .btn>label[for=tab1],
+input[id=tab2]:checked ~ .btn>label[for=tab2],
+input[id=tab3]:checked ~ .btn>label[for=tab3]
+{
+    background-color: tomato;
 }

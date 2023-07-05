@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS선택자</title>
+    <style>
+        li{ 
+            list-style: none;
+            display: inline-block;
+            margin: 10px 20px;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        a[href="#"]{
+            border: 1px solid #000;
+        }
+        /* [class ~= "a2"]{
+            background-color: yellow;
+        } */
+        a[href|="a"]{
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="1">메인메뉴:</a></li>
+        <li><a href="a-#" class="a1 a2">메뉴1</a></li>
+        <li><a href="#-a" class="a1">메뉴2</a></li>
+        <li><a href="#ab">메뉴3</a></li>
+        <li><a href="b#">메뉴4</a></li>
+    </ul>
+</body>
+</html>

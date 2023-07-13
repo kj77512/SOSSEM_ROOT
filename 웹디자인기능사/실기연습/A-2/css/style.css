@@ -10,28 +10,97 @@ li{ list-style: none;}
     width: 1200px;
     margin: 0 auto;
 }
+.popupBox{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    background-color: rgba(0,0,0,0.6);
+}
+.popup{
+    background-color: pink;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 10px;
+}
+.popup > h2{
+    margin: 5px auto;
+}
+.popup > p{
+    margin: 10px auto;
+}
+.popup > button{
+    padding: 5px 10px;
+    float: right;
+}
 
 /*** header ***/
 header{
     height: 100px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .logo{
     width: 200px;
 }
 .gnb{
-    width: 1000px;
-    height: 100%;
+    /* width: 1000px; */
+    /* height: 100%; */
+    margin-right: 50px;
     background-color: violet;
+}
+.gnb > ul{
+    display: flex;
+}
+.main-menu{
+    position: relative;
+}
+.main-menu > a{
+    padding: 5px 30px;
+}
+.main-menu > a:hover{
+    background-color: yellowgreen;
+}
+.sub-menu{
+    z-index: 10;
+    background-color: turquoise;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    display: none;
+    /* visibility: hidden;*/
+    /* opacity: 0; */
+} 
+.sub-menu a{
+    padding: 5px;
+}
+.sub-menu a:hover{
+    background-color: brown;
 }
 
 /*** slide ***/
 .slide{
     height: 300px;
-    background-color: yellow;
+    overflow: hidden;
 }
-
+.slide .item{
+    position: relative;
+}
+.slide .item > p{
+    background-color: #eee;
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 /*** contents ***/
 .contents{
     height: 200px;

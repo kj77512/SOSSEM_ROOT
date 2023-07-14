@@ -19,6 +19,9 @@ header > h1{
     height: 100px;
     background-color: violet;
 }
+header img{
+    margin-top: 30px;
+}
 /*** main */
 main{
     width: 800px;
@@ -34,6 +37,16 @@ section.contents{
 }
 .contents > article{
     width: 33.333333%;
+}
+.contents > article:first-child{
+    background-color: #fff;
+}
+.contents > .tabs > .tabMenu > li{
+    display: inline-block;
+    padding: 5px 10px;
+}
+.tabOn{
+    background-color: tomato;
 }
 footer{
     display: flex;

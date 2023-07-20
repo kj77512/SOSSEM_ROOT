@@ -22,10 +22,6 @@ alert('world');
 // // document.write(result);
 // console.log( result );
 // console.log( typeof(result) );
-// console.log( "---------------")
+// console.log( "---------------");
 // //null과 undefined
 // console.log( data );
-
-
-value = 10;
-var value=5;

@@ -50,3 +50,5 @@ if( num1 > 0 ){
 } else{
     console.log( "0 입니다");
 }
+
+``

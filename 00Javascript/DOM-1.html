@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM구조</title>
+    <style>
+        #number{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>두 수를 더하세요</h1>
+    <input type="number" value="4" id="number">
+    <span>+</span>
+    <input type="number" class="num2">
+    <span>=</span>
+    <span>계산값</span>
+    <br>
+    <!-- <button onclick="add();">계산하기</button> -->
+    <button>계산하기</button>
+    <script>
+        //자바스크립트 소스
+        /*
+        //1. 요소 정보 가져오기
+        const elemInput1 = document.getElementById("number");        
+        //2.value 값 알아내기
+        console.log( elemInput1.value );
+        //class 를 이용하는 방법
+        //1. 요소 정보 가져오기
+        const elemInput2 = document.getElementsByClassName("num2");
+        console.log( elemInput2[0].value );
+        */
+        
+        //1. 요소 선택하기 (선택자)
+        const elemInput1 = document.querySelector('#number');
+        console.log( elemInput1 );
+        const elemInput2 = document.querySelector('.num2');
+        console.log( elemInput2 );
+        const elemSpan = document.querySelectorAll('span');
+        // console.log( elemSpan[0] );
+        for( let i=0 ; i<elemSpan.length ; i++ ){
+            console.dir( elemSpan[i] );
+            elemSpan[i].style.color = 'red';
+            elemSpan[i].style.fontWeight = 'bolder';
+        }
+        const add = () => {
+            // console.log( '***** add function ****' );
+            alert("두수 더한값은?");
+        }
+        //버튼 클릭
+        const elemBtn = document.querySelector('button');
+        console.dir( elemBtn );
+        /*
+        elemBtn.onclick = add;
+        elemBtn.onclick = () => {
+            console.log( "추가 함수");
+        }
+        */
+        elemBtn.addEventListener('click', add );
+        elemBtn.addEventListener('click', (bbb)=>{
+            console.log( bbb );
+        });
+    </script>
+</body>
+</html>

@@ -47,7 +47,10 @@
         }
         const add = () => {
             // console.log( '***** add function ****' );
-            alert("두수 더한값은?");
+            // console.log( elemInput1.value , elemInput2.value );
+            let calc = Number(elemInput1.value) + Number(elemInput2.value);
+            // console.log( calc );   
+            elemSpan[2].innerText = calc;    
         }
         //버튼 클릭
         const elemBtn = document.querySelector('button');
@@ -59,9 +62,9 @@
         }
         */
         elemBtn.addEventListener('click', add );
-        elemBtn.addEventListener('click', (bbb)=>{
-            console.log( bbb );
-        });
+        // elemBtn.addEventListener('click', (bbb)=>{
+        //     console.log( bbb );
+        // });
     </script>
 </body>
 </html>

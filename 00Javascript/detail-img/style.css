@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: 500px;
+    margin: 50px auto; 
+}
+.bg-img{
+    height: 400px;
+    background-image: url(../../image/sample/cafe-1.jpg);
+    background-size: cover;
+    position: relative;
+}
+.bg-img > .open{
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+.detail{
+    display: none;
+    text-align: center;
+}

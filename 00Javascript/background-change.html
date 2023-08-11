@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-color change</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 500px;
+            margin: 50px auto;
+        }
+        ul{
+            list-style: none;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-around;
+        }
+        li{   
+            width: 20%;         
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+        div.bg{
+            /* background-color: green; */
+            height: 300px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul>
+            <li>Green</li>
+            <li>Orange</li>
+            <li>Purple</li>
+        </ul>
+        <div class="bg"></div>
+    </div>
+    <script>
+        //background color 를 변경작업
+        const elemBg = document.querySelectorAll('li');
+        const elemResult = document.querySelector('.bg');
+        //function defined
+        const onClickList = (event) => {
+            // console.dir( event.target.textContent );
+            elemResult.style.backgroundColor = event.target.textContent;
+        }
+        for( let i=0 ; i<elemBg.length ; i++ ){
+            elemBg[i].addEventListener('click',onClickList);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="../image/numnber/image-01.png" alt="img-01">
+    </div>
+    <script>
+        const elemImg = document.querySelector('img');
+        // console.dir( elemImg );
+        elemImg.addEventListener('click',()=>{
+            //기능 구현
+            // console.log( elemImg.getAttribute('src') );
+            let path = '../image/numnber/image-02.png';
+            elemImg.setAttribute('src',path);
+        });
+    </script>
+</body>
+</html>

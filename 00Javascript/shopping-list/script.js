@@ -15,6 +15,11 @@ const showSmallBorder = (obj) => {
     //작은 이미지 테두리 만들기
     obj.style.outline = '2px solid blue';
 }
+const btnImgChange = (obj) => {
+    showSmallBorder(obj);
+    let path = obj.getAttribute('src');
+    elemBig.setAttribute('src',path);    
+}
 const onClickSmall = (event) => {
     //테두리 만들기
     // showSmallBorder(event.target);
@@ -22,12 +27,6 @@ const onClickSmall = (event) => {
     // elemBig.setAttribute('src',path);    
     btnImgChange(event.target);
 }
-const btnImgChange = (obj) => {
-    showSmallBorder(obj);
-    let path = obj.getAttribute('src');
-    elemBig.setAttribute('src',path);    
-}
-
 //이벤트 등록
 for( let i=0 ; i<elemSmall.length ; i++ ){
     elemSmall[i].addEventListener('click',onClickSmall);
@@ -46,3 +45,6 @@ elemNext.addEventListener('click',()=>{
     }
     btnImgChange(elemSmall[imgIndex-1]);
 });
+
+//처음실행
+btnImgChange(elemSmall[imgIndex-1]);

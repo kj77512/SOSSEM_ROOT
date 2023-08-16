@@ -10,6 +10,7 @@
             height: 100px;
             margin: 50px auto;
             border: 1px solid #000;
+            transition: 1s;
         }
     </style>
 </head>
@@ -20,8 +21,12 @@
         elemRect.addEventListener('mouseover',()=>{
             console.log( '마우스 올림 이벤트 발생' );
             elemRect.style.backgroundColor="blue";
+            elemRect.style.borderRadius = '50%';
             // elemRect.setAttribute('style','backgroundColor:blue');
-
+        });
+        elemRect.addEventListener('mouseout',()=>{
+            elemRect.style.backgroundColor = '';
+            elemRect.style.borderRadius = '';
         });
     </script>
 </body>

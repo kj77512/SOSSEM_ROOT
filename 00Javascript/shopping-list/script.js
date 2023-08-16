@@ -28,9 +28,14 @@ const onClickSmall = (event) => {
     btnImgChange(event.target);
 }
 //이벤트 등록
-for( let i=0 ; i<elemSmall.length ; i++ ){
-    elemSmall[i].addEventListener('click',onClickSmall);
-}
+// for( let i=0 ; i<elemSmall.length ; i++ ){
+//     elemSmall[i].addEventListener('click',onClickSmall);
+// }
+elemSmall.forEach( (value) => {
+    //반복 코드
+    value.addEventListener('click',onClickSmall);
+} );
+
 elemPrev.addEventListener('click',()=>{
     imgIndex--;
     if( imgIndex <= 1 ){

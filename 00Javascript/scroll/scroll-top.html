@@ -37,18 +37,28 @@
     <script>
         const elemBox = document.querySelector('button');
         const onScrollEvent = () => {            
-            //스크롤 이벤트 처리
-            let top = document.documentElement.scrollTop;
-            console.log( 'top => ' + top );
-            console.log( window.scrollY ); //전체페이지에서 스크롤된 양
-            console.log( window.innerHeight );  //100vh
-            if( top > 100 ) {
+            // //스크롤 이벤트 처리
+            // let top = document.documentElement.scrollTop;
+            // console.log( 'top => ' + top );
+            // console.log( window.scrollY ); //전체페이지에서 스크롤된 양
+            // console.log( window.innerHeight );  //100vh
+            // if( top > 100 ) {
+            //     elemBox.style.display = 'block';
+            // } else {
+            //     elemBox.style.display = 'none';
+            // }
+            // const clientH = document.documentElement.clientHeight;
+            // const scrollH = document.documentElement.scrollHeight;
+            // const scrollTop = document.documentElement.scrollTop;
+            const {clientHeight,scrollHeight,scrollTop} = document.documentElement;
+            console.log( `client=${clientHeight} scroll=${scrollHeight} top=${scrollTop}` );
+            if( (scrollHeight-clientHeight)===scrollTop ) {
                 elemBox.style.display = 'block';
             } else {
                 elemBox.style.display = 'none';
             }
         }
-        window.addEventListener('scroll',onScrollEvent);
+        window.addEventListener('scroll',onScrollEvent );
     </script>
 </body>
 </html>

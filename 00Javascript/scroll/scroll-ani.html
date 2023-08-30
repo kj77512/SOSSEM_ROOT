@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCROLL ANI</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        main{
+            background-color: yellowgreen;
+            height: 1000vh;
+            padding: 60%;
+        }
+        img{
+            width: 150px;
+            transition: 1s;
+        }
+        img.zoom{
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia veritatis, dolorem doloremque explicabo ullam in sequi repellendus tenetur earum commodi quam illo consectetur molestiae quasi soluta consequuntur unde fugit atque.</p>
+        <img src="../../image/sample/apple.jpeg" alt="사과">
+    </main>
+    <script>
+        const elemImg = document.querySelector('img');
+        const onScrollEvent = () => {
+            const {clientHeight} = document.documentElement;
+            const h = clientHeight / 2;
+            let posY = elemImg.getBoundingClientRect().top;
+            // let posY = elemImg.offsetTop;
+            // console.log( h,posY );
+            if( posY < h ) {
+                elemImg.classList.add('zoom');
+            } else {
+                elemImg.classList.remove('zoom');
+            }
+        }
+        const init= () => {
+            window.addEventListener('scroll',onScrollEvent);
+        }
+        init();
+    </script>
+</body>
+</html>

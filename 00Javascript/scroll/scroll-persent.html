@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SCROLL PERSENT</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            header{
+                position: fixed;
+                width: 100%;
+                height: 100px;
+                top: 0;
+                left: 0;
+            }
+            h1 {
+                text-align: center;
+            }
+            main {
+                margin: 100px 0;
+                height: 1000vh;
+                background-color: yellowgreen;
+            }
+            #bar {
+                width: 0;
+                height: 10px;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Hello JavaScript!</h1>
+            <div id="bar"></div>
+        </header>
+        <main>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                vero consequuntur alias totam nihil. Laudantium necessitatibus
+                molestias deleniti amet recusandae rerum ea! Atque quidem quia,
+                nulla facilis ipsam quibusdam veritatis.
+            </p>
+        </main>
+        <script>
+            const elemBar = document.querySelector('#bar');
+            const onScrollEvent = () => {
+                const { scrollHeight, clientHeight, scrollTop } =
+                    document.documentElement;
+                const realHeight = scrollHeight - clientHeight;
+                const percent = Math.floor((scrollTop / realHeight) * 100);
+                elemBar.style.width = `${percent}%`;
+            };
+            const init = () => {
+                window.addEventListener("scroll", onScrollEvent);
+            };
+            init();
+        </script>
+    </body>
+</html>

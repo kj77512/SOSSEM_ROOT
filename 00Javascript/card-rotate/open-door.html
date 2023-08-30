@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open-Door</title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        .wrapper{
+            height: 100vh;
+            background-color: #888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .door{
+            width: 100px;
+            height: 150px;
+            position: relative;            
+        }
+        .door > div{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .door > .back{
+            background-color: #000;
+        }
+        .door:nth-of-type(1) > .front{
+            background-color: red;
+        }
+        .door:nth-of-type(2) > .front{
+            background-color: green;
+        }
+        .door:nth-of-type(3) > .front{
+            background-color: blue;
+        }
+        .door > .front{
+            transform-origin: left center;
+            transition: 0.5s;
+        }
+        .door-open{
+            transform: perspective(600px) rotateY(-120deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="door">
+            <div class="back"></div>
+            <div class="front door-open"></div>
+        </div>
+        <div class="door">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="door">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+    </div>
+    <script>  
+        //1. 요소를 선택
+        const elemDoor = document.querySelectorAll('.door');
+        // console.log( elemDoor );
+        const onClickDoor = (event) => {
+            //클릭 이벤트가 발생하면 수행되어야 하는 함수
+            console.dir( event.target );
+            let elem = event.target;
+            if( elem.classList.contains('front') ){
+                elem.classList.toggle('door-open');
+                // if( elem.classList.contains('door-open')){
+                //     elem.classList.remove('door-open');
+                // } else{
+                //     // console.log( "클래스가 포함되어 있지 않음" );
+                //     elem.classList.add('door-open');
+                // }
+            }else{
+                // console.log( elem.nex`tElementSibling );
+                let next = elem.nextElementSibling;
+                next.classList.toggle('door-open');
+            }
+
+        }
+        const init = () => { 
+            elemDoor.forEach( (obj) => {
+                // console.log( obj, idx );
+                //각각의 요소에 이벤트 등록
+                obj.addEventListener( 'click' , onClickDoor );
+            } );
+        }
+        init();
+        
+    </script>
+</body>
+</html>

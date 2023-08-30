@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드레그 이벤트</title>
+    <style>
+        #box{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border: 1px solid orange;
+            cursor: pointer;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <!-- <div id="box" oncontextmenu="return false;"></div> -->
+    <script>
+        const elemBox = document.querySelector("#box");
+        // console.dir( elemBox );
+        
+        // const mouseRightClick =() => {
+        //     console.log( "마우스 오른쪽 버튼 클릭");
+        //     return false;
+        // }
+        const mouseRightClick =(e) => {
+            console.log( "마우스 오른쪽 버튼 클릭");
+            e.preventDefault();
+        }
+        const onMouseMove = (event) => {
+            elemBox.style.left = event.clientX + 'px';
+            elemBox.style.top = event.clientY + 'px';
+        }
+        // elemBox.oncontextmenu = mouseRightClick;
+        elemBox.addEventListener("contextmenu",mouseRightClick );
+        document.addEventListener("mousedown", (event)=>{
+            console.log( event.clientX , event.clientY );
+            //마우스 다운하면 그 때 마우스 따라 움직인다.
+            document.addEventListener("mousemove",onMouseMove);
+        });
+        document.addEventListener("mouseup",()=>{
+            console.log( "마우스 업");
+            document.removeEventListener("mousemove",onMouseMove);
+        });
+
+    </script>
+</body>
+</html>

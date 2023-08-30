@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+*{ margin: 0; padding: 0;}
+#wrapper{
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrapper > div{
+    width: 200px;
+    height: 200px;
+    margin: 0 30px;
+}
+#com , #self {
+    background-image: url(./images/rsp.png);
+    background-size: auto 200px;
+    /* 가위 : 0 , 바위 : -220 보 :-440 */
+    background-position: 0;
+    background-repeat: no-repeat;
+}
+#self > div{
+    position: relative;
+    top: 220px;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+#self > div > button{
+    flex: 1;
+}
+#result{
+    text-align: center;
+    font-size: 2rem;
+    color: #00f;
+}

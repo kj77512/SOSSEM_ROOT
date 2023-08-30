@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCROLL</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        h1{
+            background-color: #222;
+            color: #fff;
+            padding: 30px;
+        }
+        main{
+            padding-bottom: 3000px;
+        }
+        button{
+            background-color: #f00;
+            color: #fff;
+            outline: none;
+            border: none;
+            position: fixed;
+            right: 20px;
+            bottom: 30px;
+            padding: 30px;
+            font-size: 2rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>scroll down</h1>
+    <main>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum harum aperiam consequuntur saepe sequi inventore tenetur, voluptates officiis eum ipsum omnis temporibus nostrum, ut totam minus numquam neque velit quidem.
+    </main>
+    <button>TOP</button>
+    <script>
+        const elemBox = document.querySelector('button');
+        const onScrollEvent = () => {            
+            //스크롤 이벤트 처리
+            let top = document.documentElement.scrollTop;
+            console.log( 'top => ' + top );
+            console.log( window.scrollY ); //전체페이지에서 스크롤된 양
+            console.log( window.innerHeight );  //100vh
+            if( top > 100 ) {
+                elemBox.style.display = 'block';
+            } else {
+                elemBox.style.display = 'none';
+            }
+        }
+        window.addEventListener('scroll',onScrollEvent);
+    </script>
+</body>
+</html>
